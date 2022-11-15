@@ -1,19 +1,19 @@
 import json
+import os
 
-
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 def load_data_posts():
     """ Загружает данные из файла и возвращает обычный list"""
-    with open("C:\\Users\\Den4ik\\PycharmProjects\\coursework2_source\\data\posts.json", "r", encoding="utf-8") as file:
-        data = json.load(file)
-    return data
+    with open(os.path.join(ROOT_DIR, 'data/posts.json'), "r", encoding="utf-8") as file:
+        file = json.load(file)
+    return file
 
 
 def load_data_comments():
     """ Загружает данные из файла и возвращает обычный list"""
-    with open("C:\\Users\\Den4ik\\PycharmProjects\\coursework2_source\\data\\comments.json", "r",
-              encoding="utf-8") as file:
-        data = json.load(file)
-    return data
+    with open(os.path.join(ROOT_DIR, 'data/comments.json'), "r", encoding="utf-8") as file:
+        file = json.load(file)
+    return file
 
 
 # Функции, связанные с постами #
