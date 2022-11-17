@@ -11,7 +11,7 @@ user_posts_blueprint = Blueprint("user_posts_blueprint", __name__, template_fold
 api_posts_blueprint = Blueprint("api_posts_blueprint", __name__, template_folder='templates')
 api_posts_by_id_blueprint = Blueprint("api_posts_by_id_blueprint", __name__, template_folder='templates')
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO, filename='logs/api.log')
 
 @main_blueprint.route('/')
 def page_index():
