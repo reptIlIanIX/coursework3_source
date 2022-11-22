@@ -1,5 +1,4 @@
 from run import app
-from flask import json, jsonify
 from utils import get_posts_all, get_post_by_pk
 
 keys_posts = {'content',
@@ -10,12 +9,13 @@ keys_posts = {'content',
               'poster_name',
               'views_count'}
 
+
 def test_app():
     response = app.test_client().get('/')
     assert response.status_code == 200
 
 
-def test_app():
+def test_app_2():
     response = app.test_client().get('/meow')
     assert response.status_code == 404
 
@@ -34,11 +34,12 @@ def test_search():
     assert response.status_code == 200
 
 
-def test_search():
+def test_search_2():
     params = {"s": int}
     response = app.test_client().get('/search', query_string=params)
     print(response.json)
     assert response.status_code == 200
+
 
 def test_json_all():
     data = get_posts_all()
@@ -46,6 +47,7 @@ def test_json_all():
     assert response.json == data
     for item in data:
         assert set(item.keys()) == keys_posts
+
 
 def test_json_one():
     data = get_post_by_pk(2)

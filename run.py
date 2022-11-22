@@ -4,7 +4,7 @@ from views import main_blueprint, posts_by_name_blueprint, posts_by_id_blueprint
 
 
 app = Flask(__name__)
-app.config['JSON_AS_ASCII'] = False
+
 
 app.register_blueprint(main_blueprint)
 app.register_blueprint(posts_by_name_blueprint)
